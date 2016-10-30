@@ -2,7 +2,8 @@
 Anagram finder
 
 ## Requirements
-Python ≥3.5 is required. There are no package dependencies.
+* Python ≥3.5. There are no package dependencies.
+* File containing list of words, one on each line.
 
 ## Usage
 
