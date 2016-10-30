@@ -65,6 +65,8 @@ epimers
 >>> anagram_finder = anagram.AnagramFinder(words_file)
 >>> anagram_finder.find('empires')
 ['premise', 'emprise', 'imprese', 'spireme', 'epimers']
+>>> anagram_finder.find('code')
+['deco', 'coed', 'ecod']
 ```
 
 ## Shell performance
