@@ -21,7 +21,7 @@ class ArgumentParser(argparse.ArgumentParser):
         """Add arguments to parser."""
         self.add_argument('word', help='Word, e.g. "empires"')
         self.add_argument('file', nargs='?', default='words.txt',
-                          type=argparse.FileType('r'),
+                          type=argparse.FileType(),
                           help='Words file (default: "%(default)s")')
 
     def parse_args(self, args=None, namespace=None):
