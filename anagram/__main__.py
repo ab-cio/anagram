@@ -36,29 +36,38 @@ class ArgumentParser(argparse.ArgumentParser):
 
 
 class AnagramFinder:  # pylint: disable=too-few-public-methods
-    """Find anagrams."""
+    """Find anagrams.
+
+    The anagram finder has a one-time initialization cost of finding and
+    caching the anagrams of all words.  It is optimized for fast lookups of
+    anagrams of individual words.
+    """
 
     def __init__(self, file):
-        """Find anagrams for words read using the given file handle.
+        """Map anagrams for words in the given file.
 
-        The file must contain one word per line and have no repeated words.
+        The file must contain a list of unique lowercase words, one per line.
         """
         with file:
             self._anagrams = self._map_anagrams(file)
 
     def _map_anagrams(self, file):
+        """Return a mapping of wordgrams to a tuple of their anagrams.
+
+        The mapping contains entries only for words with at least one anagram.
+        """
         anagrams = collections.defaultdict(list)
         for word in file:
             word = word.rstrip()
             wordgram = self._wordgram(word)
             anagrams[wordgram].append(word)
-        anagrams.default_factory = None  # Prevents setitem upon getitem.
+        anagrams = {k: tuple(v) for k, v in anagrams.items() if len(v) > 1}
         return anagrams
 
     @staticmethod
     def _wordgram(word):
         """Return the given word with its letters sorted."""
-        return ''.join(sorted(tuple(word)))
+        return ''.join(sorted(word))
 
     def find(self, word):
         """Return a list of anagrams for the given word."""
