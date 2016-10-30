@@ -72,7 +72,7 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
     def find(self, word):
         """Return a list of anagrams for the given word."""
         wordgram = self._wordgram(word)
-        anagrams = self._anagrams.get(wordgram, [])
+        anagrams = self._anagrams.get(wordgram, ())
         anagrams = [anagram for anagram in anagrams if word != anagram]
         return anagrams
 
