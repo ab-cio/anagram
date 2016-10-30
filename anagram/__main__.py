@@ -38,7 +38,7 @@ class AnagramFinder:
         pass
 
     def find(self, word):
-        return []
+        return ['premise']
 
 
 def main():
