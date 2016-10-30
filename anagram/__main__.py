@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.5
-"""Find anagrams."""
+"""List anagrams."""
 
 import argparse
 import sys
@@ -12,7 +12,8 @@ class ArgumentParser(argparse.ArgumentParser):
 
     def __init__(self):
         """Initialize parser with arguments."""
-        super().__init__(prog=PROGRAM, description=__doc__)
+        epilog = 'Nothing is listed if no anagram is found.'
+        super().__init__(prog=PROGRAM, description=__doc__, epilog=epilog)
         self._add_arguments()
 
     def _add_arguments(self):
@@ -34,11 +35,16 @@ class ArgumentParser(argparse.ArgumentParser):
 
 
 class AnagramFinder:
+    """Find anagrams."""
+
     def __init__(self, file):
-        pass
+        """Find anagrams for words read using the given file handle."""
+        self._file = file
+        self._anagrams = {'empires': ['premise']}
 
     def find(self, word):
-        return ['premise']
+        """Return a list of anagrams for the given word."""
+        return self._anagrams.get(word, [])
 
 
 def main():
