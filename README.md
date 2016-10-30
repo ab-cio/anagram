@@ -15,8 +15,8 @@ Anagram finder
 * File containing a list of unique lowercase words, one per line.
 
 ## Design
-The `AnagramFinder` class has a one-time initialization cost of finding and
-caching the anagrams of all words.  As such, the class is optimized for fast
+The anagram finder is designed with a one-time initialization cost of finding
+and caching the anagrams of all words.  As such, it is optimized for fast
 lookups of anagrams of _multiple_ individual words.
 
 ## Usage
