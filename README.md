@@ -10,5 +10,5 @@ Python ≥3.5 is required. There are no package dependencies.
     $ cd ./anagram/
 
 ## Example
-    $ python3.5 anagram words.txt empires
+    $ python3.5 anagram ./words.txt empires
     premise
