@@ -18,7 +18,7 @@ Anagram finder
 ## Design
 The anagram finder is designed with a one-time initialization cost of finding
 and caching the anagrams of all words.  As such, it is optimized for fast
-lookups of anagrams of _multiple_ individual words.
+successive lookups of anagrams of individual words.
 
 The sort order of the word list is preserved in the returned anagrams. Using a
 sorted word list will ensure that the returned anagrams are also sorted.
