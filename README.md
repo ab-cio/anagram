@@ -9,7 +9,7 @@ Anagram finder
     - [Help](#help)
     - [Example](#example)
 - [Module usage](#module-usage)
-- [Shell performance](#performance)
+- [Shell performance](#shell-performance)
 
 ## Requirements
 * Python ≥3.5. There are no package dependencies.
@@ -62,10 +62,10 @@ epimers
 ```python
 >>> import anagram
 >>> words_file = open('words.txt')
->>> anagram_finder = anagram.AnagramFinder(words_file)
->>> anagram_finder.find('empires')
+>>> anagram_finder = anagram.AnagramFinder(words_file)  # Slow
+>>> anagram_finder.find('empires')  # Fast
 ['premise', 'emprise', 'imprese', 'spireme', 'epimers']
->>> anagram_finder.find('code')
+>>> anagram_finder.find('code')  # Fast
 ['deco', 'coed', 'ecod']
 ```
 
