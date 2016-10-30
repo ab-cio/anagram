@@ -2,6 +2,7 @@
 """List anagrams."""
 
 import argparse
+import collections
 import sys
 
 PROGRAM = 'anagram'
@@ -42,7 +43,17 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
 
         The file must contain one word per line and have no repeated words.
         """
-        self._file = file
+        with file:
+            self._anagrams = self._map_anagrams(file)
+
+    def _map_anagrams(self, file):
+        anagrams = collections.defaultdict(list)
+        for word in file:
+            word = word.rstrip()
+            wordgram = self._wordgram(word)
+            anagrams[wordgram].append(word)
+        anagrams.default_factory = None  # Prevents setitem upon getitem.
+        return anagrams
 
     @staticmethod
     def _wordgram(word):
@@ -52,11 +63,8 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
     def find(self, word):
         """Return a list of anagrams for the given word."""
         wordgram = self._wordgram(word)
-        anagrams = []
-        for fileword in self._file:
-            fileword = fileword.rstrip()
-            if (word != fileword) and (wordgram == self._wordgram(fileword)):
-                anagrams.append(fileword)
+        anagrams = self._anagrams.get(wordgram, [])
+        anagrams = [anagram for anagram in anagrams if word != anagram]
         return anagrams
 
 
@@ -64,7 +72,8 @@ def main():
     """Parse arguments and run program."""
     try:
         namespace = ArgumentParser().parse_args()
-        for anagram in AnagramFinder(namespace.file).find(namespace.word):
+        anagram_finder = AnagramFinder(namespace.file)
+        for anagram in anagram_finder.find(namespace.word):
             print(anagram)
     except (Exception,  # pylint: disable=broad-except
             KeyboardInterrupt) as exc:
