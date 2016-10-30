@@ -23,7 +23,7 @@ Anagram finder
 	$ python3.5 anagram -h
 	usage: anagram [-h] word [file]
 	
-	Find anagrams.
+	List anagrams.
 	
 	positional arguments:
 	  word        Word, e.g. "empires"
@@ -31,7 +31,9 @@ Anagram finder
 	
 	optional arguments:
 	  -h, --help  show this help message and exit
-
+	
+	Nothing is listed if no anagram is found.
+	
 ### Example
     $ python3.5 anagram empires ./words.txt
     premise
