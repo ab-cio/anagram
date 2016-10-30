@@ -39,8 +39,8 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
     """Find anagrams.
 
     The anagram finder has a one-time initialization cost of finding and
-    caching the anagrams of all words.  It is optimized for fast lookups of
-    anagrams of individual words.
+    caching the anagrams of all words.  As such, it is optimized for fast
+    lookups of anagrams of multiple individual words.
     """
 
     def __init__(self, file):
