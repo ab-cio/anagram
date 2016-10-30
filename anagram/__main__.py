@@ -55,8 +55,7 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
         anagrams = []
         for fileword in self._file:
             fileword = fileword.rstrip()
-            filewordgram = self._wordgram(fileword)
-            if (wordgram == filewordgram) and (word != fileword):
+            if (word != fileword) and (wordgram == self._wordgram(fileword)):
                 anagrams.append(fileword)
         return anagrams
 
