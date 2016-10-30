@@ -34,17 +34,31 @@ class ArgumentParser(argparse.ArgumentParser):
         return namespace
 
 
-class AnagramFinder:
+class AnagramFinder:  # pylint: disable=too-few-public-methods
     """Find anagrams."""
 
     def __init__(self, file):
-        """Find anagrams for words read using the given file handle."""
+        """Find anagrams for words read using the given file handle.
+
+        The file must contain one word per line and have no repeated words.
+        """
         self._file = file
-        self._anagrams = {'empires': ['premise']}
+
+    @staticmethod
+    def _wordgram(word):
+        """Return the given word with its letters sorted."""
+        return ''.join(sorted(tuple(word)))
 
     def find(self, word):
         """Return a list of anagrams for the given word."""
-        return self._anagrams.get(word, [])
+        wordgram = self._wordgram(word)
+        anagrams = []
+        for fileword in self._file:
+            fileword = fileword.rstrip()
+            filewordgram = self._wordgram(fileword)
+            if (wordgram == filewordgram) and (word != fileword):
+                anagrams.append(fileword)
+        return anagrams
 
 
 def main():
