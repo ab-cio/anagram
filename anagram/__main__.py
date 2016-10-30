@@ -27,7 +27,7 @@ class ArgumentParser(argparse.ArgumentParser):
 
         In case of a validation error, print the error and exit.
         """
-        namespace = super().parse_args()
+        namespace = super().parse_args(args, namespace)
         if len(namespace.word) == 0:
             self.error('Word must not be empty.')
         return namespace
