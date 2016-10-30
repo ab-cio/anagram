@@ -26,3 +26,12 @@ Python ≥3.5 is required. There are no package dependencies.
 ### Example
     $ python3.5 anagram empires ./words.txt
     premise
+
+## Performance
+
+	$ time python3.5 anagram empires
+	premise
+	
+	real	0m0.129s
+	user	0m0.110s
+	sys	0m0.009s
