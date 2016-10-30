@@ -11,7 +11,7 @@ Anagram finder
 
 ## Requirements
 * Python ≥3.5. There are no package dependencies.
-* File containing list of words, one on each line.
+* File containing a list of unique words, one on each line.
 
 ## Usage
 
