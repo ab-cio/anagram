@@ -1,6 +1,14 @@
 # anagram
 Anagram finder
 
+## Contents
+- [Requirements](#requirements)
+- [Usage](#usage)
+    - [Clone](#clone)
+    - [Help](#help)
+    - [Example](#example)
+- [Performance](#performance)
+
 ## Requirements
 * Python ≥3.5. There are no package dependencies.
 * File containing list of words, one on each line.
