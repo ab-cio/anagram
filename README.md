@@ -3,7 +3,7 @@ Anagram finder
 
 ## Contents
 - [Requirements](#requirements)
-- [Design]
+- [Design](#design)
 - [Usage](#usage)
     - [Clone](#clone)
     - [Help](#help)
