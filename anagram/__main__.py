@@ -12,18 +12,15 @@ class ArgumentParser(argparse.ArgumentParser):
 
     def __init__(self):
         """Initialize parser with arguments."""
-        super().__init__(prog=PROGRAM, description=__doc__, add_help=False)
+        super().__init__(prog=PROGRAM, description=__doc__)
         self._add_arguments()
 
     def _add_arguments(self):
         """Add arguments to parser."""
-        add_arg = self.add_argument_group('Arguments').add_argument
-        add_arg('-h', '--help', action='help',
-                help='Show this help message and exit')
-        add_arg('--word', required=True,
-                help='Word, e.g. "empires"')
-        add_arg('--file', default='words.txt', type=argparse.FileType('r'),
-                help='Words file (default: "%(default)s")')
+        self.add_argument('word', help='Word, e.g. "empires"')
+        self.add_argument('file', nargs='?', default='words.txt',
+                          type=argparse.FileType('r'),
+                          help='Words file (default: "%(default)s")')
 
     def parse_args(self, args=None, namespace=None):
         """Parse and validate args.
