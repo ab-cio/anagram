@@ -44,7 +44,10 @@ Anagram finder
 
 ## Performance
 
-	$ /usr/bin/time -v python3.5 anagram empires
+	$ wc ./words.txt 
+	 413988  413988 4381051 ./words.txt
+	
+	$ /usr/bin/time -v python3.5 anagram empires ./words.txt
 	premise
 	emprise
 	imprese
