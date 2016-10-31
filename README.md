@@ -23,7 +23,7 @@ Anagram finder
   from 3.x is an improved `super()` built-in function.
 * The sort order of the word list is preserved in the returned anagrams. Using
   a sorted word list will ensure that the returned anagrams are also sorted.
-* Several complementary static analysis tools were used to improve code
+* Several complementary static analysis tools were used to control code
   quality. These were `pycodestyle` (formerly `pep8`), `pydocstyle`, `pylint`,
   `mccabe` and `vulture`.
 
