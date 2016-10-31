@@ -53,21 +53,18 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
     def __getitem__(self, word):
         """Return a list of anagrams for the given word."""
         wordgram = self._wordgram(word)
-        anagrams = self._anagrams.get(wordgram, ())
+        anagrams = self._anagrams.get(wordgram, [])
         anagrams = [anagram for anagram in anagrams if word != anagram]
         return anagrams
 
     def _map_anagrams(self, file):
-        """Return a mapping of wordgrams to a tuple of their anagrams.
-
-        The mapping contains entries only for words with at least one anagram.
-        """
+        """Return a mapping of wordgrams to a tuple of their anagrams."""
         anagrams = collections.defaultdict(list)
         for word in file:
             word = word.rstrip()
             wordgram = self._wordgram(word)
             anagrams[wordgram].append(word)
-        anagrams = {k: tuple(v) for k, v in anagrams.items() if len(v) > 1}
+        anagrams.default_factory = None  # Prevents setitem upon getitem.
         return anagrams
 
     @staticmethod
