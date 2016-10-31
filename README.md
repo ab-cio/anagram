@@ -37,7 +37,7 @@ $ cd ./anagram/
 
 ### Help
 ```
-$ python3.5 anagram -h
+$ python3.5 -m anagram -h
 usage: anagram [-h] word [file]
 
 List anagrams.
@@ -54,7 +54,7 @@ Nothing is listed if no anagram is found.
 	
 ### Example
 ```
-$ python3.5 anagram empires ./words.txt
+$ python3.5 -m anagram empires ./words.txt
 premise
 emprise
 imprese
@@ -78,27 +78,27 @@ epimers
 $ wc ./words.txt 
  413988  413988 4381051 ./words.txt
 
-$ /usr/bin/time -v python3.5 anagram empires ./words.txt
+$ /usr/bin/time -v python3.5 -m anagram empires ./words.txt
 premise
 emprise
 imprese
 spireme
 epimers
-	Command being timed: "python3.5 anagram empires"
-	User time (seconds): 1.73
-	System time (seconds): 0.08
+	Command being timed: "python3.5 -m anagram empires ./words.txt"
+	User time (seconds): 1.79
+	System time (seconds): 0.07
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.82
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.88
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 129552
+	Maximum resident set size (kbytes): 129584
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 38031
+	Minor (reclaiming a frame) page faults: 38066
 	Voluntary context switches: 1
-	Involuntary context switches: 31
+	Involuntary context switches: 51
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0

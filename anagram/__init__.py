@@ -1,3 +1,3 @@
 """Anagram finder."""
 
-from .__main__ import AnagramFinder
+from .anagram import AnagramFinder
