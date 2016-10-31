@@ -36,9 +36,12 @@ $ cd ./anagram/
 
 ## Test
 ```
-$ python -m anagram.test -q
+$ python3.5 -m anagram.test -v
+test_getitem (__main__.TestAnagramFinder) ... ok
+test_parse_args (__main__.TestArgParser) ... ok
+
 ----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Ran 2 tests in 0.001s
 
 OK
 ```
