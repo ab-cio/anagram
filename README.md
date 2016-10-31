@@ -36,8 +36,7 @@ $ cd ./anagram/
 
 ## Test
 ```
-$ python3.5 -m anagram.test
-.
+$ python -m anagram.test -q
 ----------------------------------------------------------------------
 Ran 1 test in 0.000s
 
