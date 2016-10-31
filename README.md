@@ -33,6 +33,16 @@ $ git clone https://github.com/ab-cio/anagram.git
 $ cd ./anagram/
 ```
 
+## Test
+```
+$ python3.5 -m anagram.test
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+```
+
 ## Shell usage
 
 ### Help
