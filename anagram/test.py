@@ -31,7 +31,7 @@ class TestAnagramFinder(unittest.TestCase):
         words = ['test',
                  'elvis', 'lives',
                  'evil', 'veil', 'vile',
-                 'spot',
+                 'iceman',
                  'coed', 'deco']
         text = '\n'.join(words + [''])
         file = io.StringIO(text)
@@ -42,7 +42,7 @@ class TestAnagramFinder(unittest.TestCase):
                     'elvis': ['lives'],  # Present word with 1 anagram
                     'veil': ['evil', 'vile'],  # Present word with >1 anagrams
                     'fun': [],  # Missing word with 0 anagrams
-                    'post': ['spot'],  # Missing word with 1 anagram
+                    'cinema': ['iceman'],  # Missing word with 1 anagram
                     'code': ['coed', 'deco']}  # Missing word with >1 anagrams
         for word, expected_anagrams in anagrams.items():
             actual_anagrams = self._anagram_finder[word]
