@@ -5,6 +5,7 @@ Anagram finder
 - [Requirements](#requirements)
 - [Design](#design)
 - [Clone](#clone)
+- [Test](#test)
 - [Shell usage](#shell-usage)
     - [Help](#help)
     - [Example](#example)
@@ -76,10 +77,10 @@ epimers
 ```python
 >>> import anagram
 >>> words_file = open('words.txt')
->>> anagram_finder = anagram.AnagramFinder(words_file)  # Slow
->>> anagram_finder['empires']                           # Fast
+>>> anagram_finder = anagram.AnagramFinder(words_file)  # Slow.
+>>> anagram_finder['empires']                           # Fast.
 ['premise', 'emprise', 'imprese', 'spireme', 'epimers']
->>> anagram_finder['code']                              # Fast
+>>> anagram_finder['code']                              # Fast.
 ['deco', 'coed', 'ecod']
 ```
 
