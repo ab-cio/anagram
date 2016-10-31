@@ -1,3 +1,3 @@
 """Anagram finder."""
 
-from .anagram import AnagramFinder
+from .anagram import ArgumentParser, AnagramFinder
