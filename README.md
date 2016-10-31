@@ -67,9 +67,9 @@ epimers
 >>> import anagram
 >>> words_file = open('words.txt')
 >>> anagram_finder = anagram.AnagramFinder(words_file)  # Slow
->>> anagram_finder.find('empires')  # Fast
+>>> anagram_finder['empires']                           # Fast
 ['premise', 'emprise', 'imprese', 'spireme', 'epimers']
->>> anagram_finder.find('code')  # Fast
+>>> anagram_finder['code']                              # Fast
 ['deco', 'coed', 'ecod']
 ```
 

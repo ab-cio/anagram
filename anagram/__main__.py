@@ -69,7 +69,7 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
         """Return the given word with its letters sorted."""
         return ''.join(sorted(word))
 
-    def find(self, word):
+    def __getitem__(self, word):
         """Return a list of anagrams for the given word."""
         wordgram = self._wordgram(word)
         anagrams = self._anagrams.get(wordgram, ())
@@ -82,7 +82,7 @@ def main():
     try:
         namespace = ArgumentParser().parse_args()
         anagram_finder = AnagramFinder(namespace.file)
-        for anagram in anagram_finder.find(namespace.word):
+        for anagram in anagram_finder[namespace.word]:
             print(anagram)
     except (Exception,  # pylint: disable=broad-except
             KeyboardInterrupt) as exc:
