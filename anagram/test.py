@@ -3,7 +3,6 @@
 # pylint: disable=missing-docstring
 
 import io
-import random
 import unittest
 
 import anagram
@@ -17,7 +16,7 @@ class TestAnagramFinder(unittest.TestCase):
                  'evil', 'veil', 'vile',
                  'spot',
                  'coed', 'deco']
-        random.shuffle(words)
+        words.sort()
         text = '\n'.join(words + [''])
         file = io.StringIO(text)
         self._anagram_finder = anagram.AnagramFinder(file)
@@ -31,7 +30,7 @@ class TestAnagramFinder(unittest.TestCase):
                     'code': ['coed', 'deco']}  # Missing word with >1 anagrams
         for word, expected_anagrams in anagrams.items():
             actual_anagrams = self._anagram_finder[word]
-            self.assertEqual(set(expected_anagrams), set(actual_anagrams))
+            self.assertEqual(expected_anagrams, actual_anagrams)
 
 if __name__ == '__main__':
     unittest.main()
