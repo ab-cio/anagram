@@ -24,6 +24,10 @@ class TestArgParser(unittest.TestCase):
         self.assertFalse(nfile.closed)
         nfile.close()
 
+    def test_empty_word(self):
+        args = ('', os.devnull)
+        self.assertRaises(SystemExit, self._argparser.parse_args, args)
+
 
 class TestAnagramFinder(unittest.TestCase):
 
@@ -49,4 +53,4 @@ class TestAnagramFinder(unittest.TestCase):
             self.assertEqual(expected_anagrams, actual_anagrams)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(buffer=True)
