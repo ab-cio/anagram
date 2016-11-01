@@ -73,7 +73,7 @@ class AnagramFinder:  # pylint: disable=too-few-public-methods
         return ''.join(sorted(word))
 
 
-def main():
+def main():  # pragma: no cover
     """Parse arguments and run program."""
     try:
         namespace = ArgumentParser().parse_args()
@@ -84,5 +84,5 @@ def main():
             KeyboardInterrupt) as exc:
         sys.exit(exc)
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     main()
