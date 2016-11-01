@@ -52,5 +52,5 @@ class TestAnagramFinder(unittest.TestCase):
             actual_anagrams = self._anagram_finder[word]
             self.assertEqual(expected_anagrams, actual_anagrams)
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     unittest.main(buffer=True)
