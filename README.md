@@ -26,7 +26,7 @@ Anagram finder
   a sorted word list will ensure that the returned anagrams are also sorted.
 * Several complementary static analysis tools were used to control code
   quality. These were `pycodestyle` (formerly `pep8`), `pydocstyle`, `pylint`,
-  `mccabe` and `vulture`.
+  `mccabe`, `symilar` and `vulture`.
 
 ## Clone
 ```
