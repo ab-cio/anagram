@@ -30,7 +30,7 @@ Anagram finder
 
 ## Clone
 ```
-$ git clone https://github.com/ab-cio/anagram.git
+$ git clone https://github.com/impredicative/anagram.git
 $ cd ./anagram/
 ```
 
