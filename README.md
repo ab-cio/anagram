@@ -20,8 +20,6 @@ Anagram finder
 * The anagram finder is designed with a one-time initialization cost of finding
   and caching the anagrams of all words.  As such, it is optimized for fast
   successive lookups of anagrams of individual words.
-* Python 3.x is used since 2.x is legacy. An example of an utilized enhancement
-  from 3.x is an improved `super()` built-in function.
 * The sort order of the word list is preserved in the returned anagrams. Using
   a sorted word list will ensure that the returned anagrams are also sorted.
 * Several complementary static analysis tools were used to control code
